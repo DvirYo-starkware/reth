@@ -20,7 +20,7 @@ fn main() {
     }
 
     let flags = format!("{:?}", cc.get_compiler().cflags_env());
-    cc.define("MDBX_BUILD_FLAGS", flags.as_str()).define("MDBX_TXN_CHECKOWNER", "0");
+    cc.define("MDBX_BUILD_FLAGS", flags.as_str()).define("MDBX_TXN_CHECKOWNER", "0").define("MDBX_ENABLE_PROFGC", "1");
 
     // Enable debugging on debug builds
     #[cfg(debug_assertions)]
